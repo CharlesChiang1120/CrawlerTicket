@@ -1,0 +1,15 @@
+# chromedriver
+chromedriver
+
+# Byte-compiled files
+crawler/__pycache__/
+tests/__pycache__/
+
+# Virtual environment
+venv/
+
+# Log files
+*.log
+
+# Package
+requirements.txt
