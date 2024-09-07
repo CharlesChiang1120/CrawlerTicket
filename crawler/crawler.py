@@ -123,5 +123,21 @@ def main():
         print(f'Image: {info["image"]}')
         print('-' * 40)
 
+    import json
+
+    # Remove keys with empty values
+    filtered_events = {
+        key: {k: v for k, v in info.items() if v}  # Skip empty values
+        for key, info in all_events.items()
+        if any(info.values())  # Skip if all values are empty
+    }
+
+    # File path
+    file_path = './events.json'
+
+    # Write data to JSON file
+    with open(file_path, 'w', encoding='utf-8') as file:
+        json.dump(filtered_events, file, ensure_ascii=False, indent=4)
+
 if __name__ == '__main__':
     main()
